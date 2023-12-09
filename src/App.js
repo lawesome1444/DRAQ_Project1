@@ -14,10 +14,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 document.body.style = 'background: #58A0EB;';
 
 function App() {
-  //Stores the gradient CSS data for the navbar
-  const gradientBar = {
-    background: 'linear-gradient(to right, #F05511, #9C0902)',
-  };
+    //Stores the gradient CSS data for the navbar
+    const gradientBar = {
+      background: 'linear-gradient(to right, #F05511, #9C0902)',
+    };
 
   return (
     <BrowserRouter>
@@ -36,6 +36,7 @@ function App() {
         <Routes>
           <Route path='/store' element={<Store></Store>}></Route>
         </Routes>
+        <Legal></Legal>
       </div>
     </BrowserRouter>
   );
