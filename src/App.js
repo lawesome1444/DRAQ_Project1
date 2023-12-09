@@ -14,11 +14,16 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 document.body.style = 'background: #58A0EB;';
 
 function App() {
+  //Stores the gradient CSS data for the navbar
+  const gradientBar = {
+    background: 'linear-gradient(to right, #F05511, #9C0902)',
+  };
+
   return (
     <BrowserRouter>
       <div className="App">
         {/*Creating the Navbar, adding different page options and pointing where each option goes to*/}
-        <Navbar bg="dark" data-bs-theme="dark">
+        <Navbar style={gradientBar} data-bs-theme="dark">
             <Container>
               <Navbar.Brand href="/">GotNoGames</Navbar.Brand>
               <Nav className="me-auto">
