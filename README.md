@@ -14,7 +14,7 @@ Then, start by running through the following commands:<br>
   &emsp;-> npm install<br>
   &emsp;-> npm start<br>
 <br>
-<h2>Starting the Server</h2><br>
+<h2>Starting the Server</h2>
 After you have created the app, continue on with the following to setup and start the server:<br>
 (You should be in the Project folder, aka ./DRAQ_Project1)<br>
 -> Move into the backend folder using:<br>
