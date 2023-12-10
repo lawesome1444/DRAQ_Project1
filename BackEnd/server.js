@@ -47,6 +47,19 @@ const gameSchema = new mongoose.Schema({
 //gameModel will be used when interacting with the database
 const gameModel = mongoose.model('games', gameSchema);
 
+
+//Listen for requests wanting the entire list of Games on the database and send it on
+app.get('/api/games', async(req, res)=>{
+  //Get all game documents from the MongoDB database
+  let games = await gameModel.find({});
+
+  //When they have all been collected, return the JSON to the component that requested it
+  res.json(games);
+
+})
+
+
+
 //The server will constantly listen for localhost:4000 connections & requests
 app.listen(port, () => {
     console.log(`Server now listening on port ${port}`);
