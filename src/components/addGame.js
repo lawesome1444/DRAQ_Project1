@@ -61,6 +61,9 @@ function AddGame(){
                 <div className="form-group">
                     <label>Set Game Price:</label>
                     <input type="number"
+                    step="0.01"
+                    min='0'
+                    max='150'
                     className="form-control"
                     onChange={(e)=> {setPrice(e.target.value) }}
                     />
