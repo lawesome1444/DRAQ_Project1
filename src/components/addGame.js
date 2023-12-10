@@ -52,7 +52,7 @@ function AddGame(){
                 {/* Description */}
                 <div className="form-group">
                     <label>Set Game Description:</label>
-                    <input type="text"
+                    <textarea type="text"
                     className="form-control"
                     onChange={(e)=> {setDesc(e.target.value) }}
                     />
@@ -70,7 +70,7 @@ function AddGame(){
                     <label>Set Game Tags:</label>
                     <input type="text"
                     className="form-control"
-                    onChange={(e)=> {setTitle(e.target.value) }}
+                    onChange={(e)=> {setTags(e.target.value) }}
                     />
                 </div>
                 <br/>
