@@ -1,12 +1,36 @@
-//Used for displaying games.
-    //Does not use an API yet. This needs to be addressed in due time. (AKA TO-DO!!!)
-//Basic "legal" info, just meant to stay at the bottom as a footer.
+import { useEffect, useState } from "react";
+import axios from "axios";
+//Store page to list all games on the Database
 function Store(){
+
+    //Document by document, get an entry off the database, send it to games.js, format it then send it back to be displayed on this page
+    const [data, setData] = useState([]);
+
+    //Sync with DB to get up to date entries
+    useEffect(
+        ()=>{
+            //Retrieve data with axios
+            axios.get("http://localhost:4000/api/games")
+            //if successful
+            .then(
+                (response)=>{
+                    setData(response.data);
+                }
+            )
+            //If not, log an error to the console
+            .catch(
+                (error)=>{
+                    console.log(error);
+                }
+            )
+        },[]
+    );
+
+
     return(
         <div>
-            <h1>Game 1</h1>
-            <h1>Game 2</h1>
-            <h1>Game 3</h1>
+            <h2>Store</h2>
+            {/* <Games gameDetails={data}></Books> */}
         </div>
     );
 }
