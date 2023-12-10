@@ -19,6 +19,17 @@ app.use(function(req, res, next) {
   next()
 });
 
+//Importing and setting up Mongoose (for communicating with the DB)
+const mongoose = require ('mongoose');
+//More error handling
+main().catch(err => console.log(err));
+
+//Connecting to MongoDB database
+async function main() {
+  await mongoose.connect('mongodb+srv://draqProject1:admin@conorcluster.9mvkxp3.mongodb.net/?retryWrites=true&w=majority');
+}
+
+
 
 //The server will constantly listen for localhost:4000 connections & requests
 app.listen(port, () => {
