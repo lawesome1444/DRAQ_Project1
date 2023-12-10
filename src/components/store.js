@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Games from './games';
 //Store page to list all games on the Database
 function Store(){
 
@@ -10,7 +11,7 @@ function Store(){
     useEffect(
         ()=>{
             //Retrieve data with axios
-            axios.get("http://localhost:4000/api/games")
+            axios.get('http://localhost:4000/api/games')
             //if successful
             .then(
                 (response)=>{
@@ -30,7 +31,7 @@ function Store(){
     return(
         <div>
             <h2>Store</h2>
-            {/* <Games gameDetails={data}></Books> */}
+            <Games gameDetails={data}></Games>
         </div>
     );
 }
