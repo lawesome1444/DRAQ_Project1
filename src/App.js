@@ -4,6 +4,7 @@ import './App.css';
 import Legal from './components/legal';
 //Importing Routable Components
 import Store from './components/store';
+import AddGame from './components/addGame';
 //Importing Bootstrap and Router DOM for client side routing
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -28,6 +29,7 @@ function App() {
               <Navbar.Brand href="/">GotNoGames</Navbar.Brand>
               <Nav className="me-auto">
                 <Nav.Link href="/store">Store</Nav.Link>
+                <Nav.Link href="/addGame">Add Game</Nav.Link>
               </Nav>
             </Container>
         </Navbar>
@@ -35,6 +37,7 @@ function App() {
         {/*Telling which content to load depending on what page we are on (e.g DRAQ_Project1/store loads the store page HTML code)*/}
         <Routes>
           <Route path='/store' element={<Store></Store>}></Route>
+          <Route path='/addGame' element={<AddGame></AddGame>}></Route>
         </Routes>
         <Legal></Legal>
       </div>
