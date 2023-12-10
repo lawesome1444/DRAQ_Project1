@@ -2,10 +2,16 @@
 const express = require('express')
 const app = express()
 const port = 4000
+
 //Adding Error handling
 const path = require('path');
+
 //Importing Body Parser for id-specific requests
 const bodyParser = require("body-parser");
+  //Configuring Body-Parser to be used as middleware
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
+
 //Importing CORS and adding unwanted HTTP request protection
   //CORS
 const cors = require('cors');
@@ -29,6 +35,14 @@ async function main() {
   await mongoose.connect('mongodb+srv://draqProject1:admin@conorcluster.9mvkxp3.mongodb.net/?retryWrites=true&w=majority');
 }
 
+//Setting up the Game Schema, the layout each document in the DB will follow
+const gameSchema = new mongoose.Schema({
+  title:String,
+  boxArt:String,
+  desc:String,
+  price:Number,
+  tags:String
+});
 
 
 //The server will constantly listen for localhost:4000 connections & requests
