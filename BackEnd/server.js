@@ -58,6 +58,25 @@ app.get('/api/games', async(req, res)=>{
 
 })
 
+//Listen for post requests to api/games. Used by "addGame.js" to add new games to the database
+app.post('/api/games', (req, res) => {
+  console.log(req.body);
+
+  //Create a new game entry using the data provided by the user in the "addGame.js" form
+  gameModel.create({
+    title:req.body.title,
+    boxArt:req.body.boxArt,
+    desc:req.body.desc,
+    price:req.body.price,
+    tags:req.body.tags
+  })
+  //If the data is successfully sent, notify the user
+  .then(()=>{res.send("Data Received")})
+  //Ditto in case data fails to be sent to the Mongo DataBase
+  .catch(()=>{res.send("Data Not Received")})
+
+})
+
 
 
 //The server will constantly listen for localhost:4000 connections & requests
