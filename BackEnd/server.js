@@ -44,6 +44,8 @@ const gameSchema = new mongoose.Schema({
   tags:String
 });
 
+//gameModel will be used when interacting with the database
+const gameModel = mongoose.model('games', gameSchema);
 
 //The server will constantly listen for localhost:4000 connections & requests
 app.listen(port, () => {
