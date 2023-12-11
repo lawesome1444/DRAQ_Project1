@@ -32,6 +32,11 @@ function AddGame(){
     //Display this HTML as the page, a form letting new games be added
     return(
         <div style={{ margin: 'auto', width: '60%'}}>
+            <h2 style={{
+                padding: '5px',
+                background: 'linear-gradient(to right, #F05511, #9C0902)',
+                borderRadius: '5px 5px 5px 5px'
+            }}>Add Game to Store</h2>
             <form onSubmit={handleSubmit}>
                 {/* Title */}
                 <div className="form-group">

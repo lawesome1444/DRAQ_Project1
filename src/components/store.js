@@ -50,7 +50,13 @@ function Store(){
     return(
         //Display the cards that follow in the center of the store page
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h2>Store</h2>
+            <h2 style={{
+                padding: '5px',
+                background: 'linear-gradient(to right, #F05511, #9C0902)',
+                borderRadius: '5px 5px 5px 5px',
+                margin: 'auto', width: '60%'
+            }}>Store</h2>
+            <br/>
             <Games gameDetails={data} Reload={ReloadStore}></Games>
         </div>
     );
