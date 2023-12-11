@@ -13,6 +13,8 @@ export default function EditGame(props){
     const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
     const [tags, setTags] = useState('');
+    //Used solely to stop the title from changing from user edits
+    const [editTitleBar, setEditTitleBar] = useState('');
     
     //For returning to the store page
     const navigate = useNavigate();
@@ -26,6 +28,8 @@ export default function EditGame(props){
             setDesc(response.data.desc);
             setPrice(response.data.price);
             setTags(response.data.tags);
+            //Used solely to stop the title from changing from user edits
+            setEditTitleBar(response.data.title);
         })
         //If there is an issue with connecting
         .catch(function(error){
@@ -60,7 +64,7 @@ export default function EditGame(props){
                 padding: '5px',
                 background: 'linear-gradient(to right, #F05511, #9C0902)',
                 borderRadius: '5px 5px 5px 5px'
-            }}>Edit {title}'s Details</h2>
+            }}>Edit {editTitleBar}'s Details</h2>
             <form onSubmit={handleSubmit}>
                 {/* Title */}
                 <div className="form-group">
