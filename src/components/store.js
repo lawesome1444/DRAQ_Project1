@@ -22,6 +22,7 @@ function Store(){
             .catch(
                 (error)=>{
                     console.log(error);
+                    console.log("This is most likely happening because the server is not running!");
                 }
             )
         },[]
