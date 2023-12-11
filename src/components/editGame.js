@@ -60,6 +60,7 @@ export default function EditGame(props){
                 <div className="form-group">
                     <label>Edit Game Title:</label>
                     <input type="text"
+                    value={title}
                     className="form-control"
                     onChange={(e)=> {setTitle(e.target.value) }}
                     />
@@ -68,6 +69,7 @@ export default function EditGame(props){
                 <div className="form-group">
                     <label>Edit Game Box Art:</label>
                     <input type="text"
+                    value={boxArt}
                     className="form-control"
                     onChange={(e)=> {setBoxArt(e.target.value) }}
                     />
@@ -76,6 +78,7 @@ export default function EditGame(props){
                 <div className="form-group">
                     <label>Edit Game Description:</label>
                     <textarea type="text"
+                    value={desc}
                     className="form-control"
                     onChange={(e)=> {setDesc(e.target.value) }}
                     />
@@ -84,6 +87,7 @@ export default function EditGame(props){
                 <div className="form-group">
                     <label>Edit Game Price:</label>
                     <input type="number"
+                    value={price}
                     step="0.01"
                     min='0'
                     max='150'
@@ -95,6 +99,7 @@ export default function EditGame(props){
                 <div className="form-group">
                     <label>Edit Game Tags:</label>
                     <input type="text"
+                    value={tags}
                     className="form-control"
                     onChange={(e)=> {setTags(e.target.value) }}
                     />
@@ -102,7 +107,7 @@ export default function EditGame(props){
                 <br/>
                 {/* Submit Button */}
                 <div>
-                    <input type="submit" value="Add Game"></input>
+                    <input type="submit" value="Submit Edits"></input>
                 </div>
             </form>
         </div>

@@ -58,9 +58,27 @@ app.get('/api/games', async(req, res)=>{
 
 })
 
+//Listen for requests for specific games using a body-parsed ID
+app.get('/api/game/:id', async(req, res)=>{
+  //Find the game by id
+  let game = await gameModel.findById({_id:req.params.id})
+  //Send the game data for that specific ID
+  res.send(game);
+})
+
+//Similar to above, except this listens for requests to update game entries using the body-parsed ID
+app.put('/api/game/:id', async(req, res)=>{
+  //Find the game by ID then update it
+  let game = await gameModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
+  res.send(game);
+})
+
+
 //Listen for post requests to api/games. Used by "addGame.js" to add new games to the database
 app.post('/api/games', (req, res) => {
   console.log(req.body);
+
+
 
   //Create a new game entry using the data provided by the user in the "addGame.js" form
   gameModel.create({
