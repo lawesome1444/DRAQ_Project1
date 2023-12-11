@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 //Importing Footer. Permanent element with Legal info
 import Legal from './components/legal';
@@ -6,6 +5,7 @@ import Legal from './components/legal';
 import Store from './components/store';
 import AddGame from './components/addGame';
 import EditGame from './components/editGame';
+import HomePage from './components/homePage';
 //Importing Bootstrap and Router DOM for client side routing
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -27,7 +27,7 @@ function App() {
         {/*Creating the Navbar, adding different page options and pointing where each option goes to*/}
         <Navbar style={gradientBar} data-bs-theme="dark">
             <Container>
-              <Navbar.Brand href="/">GotNoGames</Navbar.Brand>
+              <Navbar.Brand href="/"><b>GotNoGames</b></Navbar.Brand>
               <Nav className="me-auto">
                 <Nav.Link href="/store">Store</Nav.Link>
                 <Nav.Link href="/addGame">Add Game</Nav.Link>
@@ -37,6 +37,7 @@ function App() {
         <br/>
         {/*Telling which content to load depending on what page we are on (e.g DRAQ_Project1/store loads the store page HTML code)*/}
         <Routes>
+          <Route path ='/' element={<HomePage></HomePage>}></Route>
           <Route path='/store' element={<Store></Store>}></Route>
           <Route path='/addGame' element={<AddGame></AddGame>}></Route>
           <Route path='/editGame/:id' element={<EditGame></EditGame>}></Route>
