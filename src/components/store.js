@@ -29,7 +29,8 @@ function Store(){
 
 
     return(
-        <div>
+        //Display the cards that follow in the center of the store page
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2>Store</h2>
             <Games gameDetails={data}></Games>
         </div>
