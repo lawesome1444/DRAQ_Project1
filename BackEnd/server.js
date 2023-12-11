@@ -78,8 +78,6 @@ app.put('/api/game/:id', async(req, res)=>{
 app.post('/api/games', (req, res) => {
   console.log(req.body);
 
-
-
   //Create a new game entry using the data provided by the user in the "addGame.js" form
   gameModel.create({
     title:req.body.title,
@@ -93,6 +91,17 @@ app.post('/api/games', (req, res) => {
   //Ditto in case data fails to be sent to the Mongo DataBase
   .catch(()=>{res.send("Data Not Received")})
 
+})
+
+//Listen for entry deletion requests
+app.delete('/api/game/:id', async(req, res)=>{
+  console.log("Delete "+req.params.id);
+
+  //Find the game with a matching ID and delete it
+  let game = await gameModel.findByIdAndDelete(req.params.id);
+
+  //Send the new game list back
+  res.send(game);
 })
 
 

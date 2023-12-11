@@ -26,11 +26,11 @@ function GameEntries(props){
             <Link to={"/editGame/"+props.gameDetails._id} className='btn btn-primary'>Edit</Link>
             <Button variant="danger" onClick={
                 (e)=>{
-                    axios.delete('http://localhost:4000/api/game/' +props.booksDetails._id)
+                    axios.delete('http://localhost:4000/api/game/'+props.gameDetails._id)
                     .then(()=>{
                         let reload = props.reload();
                     })
-                    .catch();
+                    .catch(console.log(props.gameDetails._id));
                 }
             }>Delete</Button>
             </Card>
