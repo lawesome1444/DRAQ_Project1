@@ -84,7 +84,10 @@ function AddGame(){
                 <br/>
                 {/* Submit Button */}
                 <div>
-                    <input type="submit" value="Add Game"></input>
+                    <input type="submit" value="Add Game"style={{ 
+                        background: 'linear-gradient(to right, #F05511, #9C0902)',
+                        color: 'white'
+                        }}></input>
                 </div>
             </form>
         </div>

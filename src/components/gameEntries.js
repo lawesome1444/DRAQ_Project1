@@ -23,7 +23,10 @@ function GameEntries(props){
                 <h4>{props.gameDetails.tags}</h4>
                 <h3>€{props.gameDetails.price}</h3>
             </Card.Body>
-            <Link to={"/editGame/"+props.gameDetails._id} className='btn btn-primary'>Edit</Link>
+            <Link to={"/editGame/"+props.gameDetails._id} className='btn btn-primary' style={{
+                width: '50%',
+                margin: 'auto'
+            }}>Edit {props.gameDetails.title}</Link>
             <Button variant="danger" onClick={
                 (e)=>{
                     axios.delete('http://localhost:4000/api/game/'+props.gameDetails._id)
@@ -32,7 +35,11 @@ function GameEntries(props){
                     })
                     .catch(console.log(props.gameDetails._id));
                 }
-            }>Delete</Button>
+            }
+            style={{
+                width: '50%',
+                margin: 'auto'
+            }}>Delete {props.gameDetails.title}</Button>
             </Card>
             <br/>
         </div>

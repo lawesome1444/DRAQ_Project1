@@ -117,7 +117,10 @@ export default function EditGame(props){
                 <br/>
                 {/* Submit Button */}
                 <div>
-                    <input type="submit" value="Submit Edits"></input>
+                    <input type="submit" value="Submit Edits"style={{ 
+                        background: 'linear-gradient(to right, #F05511, #9C0902)',
+                        color: 'white'
+                        }}></input>
                 </div>
             </form>
         </div>
