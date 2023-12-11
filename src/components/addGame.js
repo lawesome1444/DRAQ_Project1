@@ -31,7 +31,7 @@ function AddGame(){
 
     //Display this HTML as the page, a form letting new games be added
     return(
-        <div>
+        <div style={{ margin: 'auto', width: '60%'}}>
             <form onSubmit={handleSubmit}>
                 {/* Title */}
                 <div className="form-group">

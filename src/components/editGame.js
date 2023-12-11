@@ -54,7 +54,7 @@ export default function EditGame(props){
 
     //HTML with very similar layout to addGame.js
     return(
-        <div>
+        <div style={{ margin: 'auto', width: '60%'}}>
             <form onSubmit={handleSubmit}>
                 {/* Title */}
                 <div className="form-group">
