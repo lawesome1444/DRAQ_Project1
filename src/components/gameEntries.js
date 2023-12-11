@@ -21,6 +21,7 @@ function GameEntries(props){
                 <h4>{props.gameDetails.tags}</h4>
                 <h3>€{props.gameDetails.price}</h3>
             </Card.Body>
+            <Link to={"/editGame/"+props.gameDetails._id} className='btn btn-primary'>Edit</Link>
             </Card>
             <br/>
         </div>
