@@ -9,6 +9,7 @@ function GameEntries(props){
             <img src={props.gameDetails.boxArt}></img>
             <p>{props.gameDetails.desc}</p>
             </Card>
+            <br/>
         </div>
     );
 }
