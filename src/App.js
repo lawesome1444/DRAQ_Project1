@@ -5,6 +5,7 @@ import Legal from './components/legal';
 //Importing Routable Components
 import Store from './components/store';
 import AddGame from './components/addGame';
+import EditGame from './components/editGame';
 //Importing Bootstrap and Router DOM for client side routing
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path='/store' element={<Store></Store>}></Route>
           <Route path='/addGame' element={<AddGame></AddGame>}></Route>
+          <Route path='/editGame/:id' element={<EditGame></EditGame>}></Route>
         </Routes>
         <Legal></Legal>
       </div>
