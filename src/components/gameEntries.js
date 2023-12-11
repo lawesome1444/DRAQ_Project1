@@ -11,7 +11,16 @@ function GameEntries(props){
             }}>
             <Card.Title>{props.gameDetails.title}</Card.Title>
             <img src={props.gameDetails.boxArt} style={{ borderRadius: '15px 15px 15px 15px'}}></img>
-            <p>{props.gameDetails.desc}</p>
+            <Card.Body>
+                <p style={{
+                    background: 'linear-gradient(to right, #E0470E, #F05511)',
+                    borderRadius: '5px 5px 5px 5px',
+                    padding: '5px 5px 5px 5px',
+
+            }}><b>{props.gameDetails.desc}</b></p>
+                <h4>{props.gameDetails.tags}</h4>
+                <h3>€{props.gameDetails.price}</h3>
+            </Card.Body>
             </Card>
             <br/>
         </div>
