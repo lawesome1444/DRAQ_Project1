@@ -1,5 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 function GameEntries(props){
     return(
@@ -22,6 +24,15 @@ function GameEntries(props){
                 <h3>€{props.gameDetails.price}</h3>
             </Card.Body>
             <Link to={"/editGame/"+props.gameDetails._id} className='btn btn-primary'>Edit</Link>
+            <Button variant="danger" onClick={
+                (e)=>{
+                    axios.delete('http://localhost:4000/api/game/' +props.booksDetails._id)
+                    .then(()=>{
+                        let reload = props.reload();
+                    })
+                    .catch();
+                }
+            }>Delete</Button>
             </Card>
             <br/>
         </div>

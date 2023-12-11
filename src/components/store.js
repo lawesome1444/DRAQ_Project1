@@ -28,12 +28,30 @@ function Store(){
         },[]
     );
 
+    //Refresh after deleting games
+    const ReloadStore = (e) => {
+        axios.get('http://localhost:4000/api/games')
+        //if successful
+        .then(
+             (response)=>{
+                setData(response.data);
+             }
+         )
+        //If not, log an error to the console
+        .catch(
+              (error)=>{
+                  console.log(error);
+                  console.log("This is most likely happening because the server is not running!");
+              }
+        )
+    }
+
 
     return(
         //Display the cards that follow in the center of the store page
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2>Store</h2>
-            <Games gameDetails={data}></Games>
+            <Games gameDetails={data} Reload={ReloadStore}></Games>
         </div>
     );
 }
