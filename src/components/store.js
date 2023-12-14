@@ -66,18 +66,21 @@ function Store(){
     return(
         //Display the cards that follow in the center of the store page
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h2 style={{
+            <div style={{
                 padding: '5px',
                 background: 'linear-gradient(to right, #F05511, #9C0902)',
                 borderRadius: '5px 5px 5px 5px',
                 margin: 'auto', width: '60%'
-            }}>Store</h2>
-            <input 
-                type="text" 
-                placeholder="Search for a game..." 
-                value={dataSearch}
-                onChange={doGameSearch}
-            />
+            }}>
+                <h2>Store</h2>
+                <input 
+                    type="text" 
+                    placeholder="Search for a games..." 
+                    value={dataSearch}
+                    onChange={doGameSearch}
+                    style={{width:'40%', background:'black', color:'white'}}
+                />
+            </div>
             <br/>
             <Games gameDetails={gameSearch} Reload={ReloadStore}></Games>
         </div>
