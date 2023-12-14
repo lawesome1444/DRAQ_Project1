@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AddGame(){
     //Defining the layout of each game entry
@@ -8,6 +9,9 @@ function AddGame(){
     const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
     const [tags, setTags] = useState('');
+
+    //For returning to the store page
+    const navigate = useNavigate();
 
     //When the submit button is clicked
     const handleSubmit = (e)=>{
@@ -25,7 +29,10 @@ function AddGame(){
 
         //Sent a post request to add this data to the database, first send it to the server and let it handle the rest
         axios.post("http://localhost:4000/api/games", game)
-            .then()
+            .then((res) =>{
+                console.log(res.data);
+                navigate('/store');
+            })
             .catch();
     }
 
